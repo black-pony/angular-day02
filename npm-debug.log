@@ -1,0 +1,111 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish',
+1 verbose cli   '.' ]
+2 info using npm@4.0.5
+3 info using node@v7.4.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'E:\\我的坚果云\\流行框架\\day04\\code',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\Administrator\AppData\Roaming\npm-cache\angular-day02\1.0.1\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\Administrator\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle angular-day02@1.0.1~prepublish: angular-day02@1.0.1
+11 silly lifecycle angular-day02@1.0.1~prepublish: no script for prepublish, continuing
+12 info lifecycle angular-day02@1.0.1~prepare: angular-day02@1.0.1
+13 silly lifecycle angular-day02@1.0.1~prepare: no script for prepare, continuing
+14 verbose tar pack [ 'C:\\Users\\Administrator\\AppData\\Roaming\\npm-cache\\angular-day02\\1.0.1\\package.tgz',
+14 verbose tar pack   'E:\\我的坚果云\\流行框架\\day04\\code' ]
+15 verbose tarball C:\Users\Administrator\AppData\Roaming\npm-cache\angular-day02\1.0.1\package.tgz
+16 verbose folder E:\我的坚果云\流行框架\day04\code
+17 verbose addLocalTarball adding from inside cache C:\Users\Administrator\AppData\Roaming\npm-cache\angular-day02\1.0.1\package.tgz
+18 verbose correctMkdir C:\Users\Administrator\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+19 silly cache afterAdd angular-day02@1.0.1
+20 verbose afterAdd C:\Users\Administrator\AppData\Roaming\npm-cache\angular-day02\1.0.1\package\package.json not in flight; writing
+21 verbose correctMkdir C:\Users\Administrator\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+22 verbose afterAdd C:\Users\Administrator\AppData\Roaming\npm-cache\angular-day02\1.0.1\package\package.json written
+23 silly publish { name: 'angular-day02',
+23 silly publish   version: '1.0.1',
+23 silly publish   description: 'angular第二天课件',
+23 silly publish   main: 'index.js',
+23 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+23 silly publish   keywords: [],
+23 silly publish   author: { name: 'ericzheng' },
+23 silly publish   license: 'ISC',
+23 silly publish   dependencies: { angular: '^1.5.6', 'angular-sanitize': '^1.5.6' },
+23 silly publish   devDependencies: {},
+23 silly publish   readme: '5w1h:干什么，怎么用，什么时候用，\r\n## angular与jQuery的关系\r\n- jqLite angular.element(DOM对象)\r\n- 假如在我们的angular库引入之前引入了jquery库，jQLite === jQuery --> angular.element(\'#demo\')\r\n## angular中的MVVM架构图\r\n- view\r\n- controller\r\n- view model($scope)\r\n- model\r\n## 划分模块的方式\r\n- 按功能划分\r\n- 按文件划分 按MVC来划分 controller,model --> \r\n## 写控制器的三种方式\r\n- \r\n- 面向对象 $scope.name this.name\r\n- 传统方式\r\n- 使用面向对象的方式\r\n- 安全的方式 --> ng-angular-annotate\r\nmyApp.controller(\'myController\',[\'$scope\',\'$log\',function(a,b)])\r\n## 依赖注入的原理\r\nDependence Inject DI\r\n\r\n\r\n\r\n## 指令\r\n- ng-app\r\n- ng-click\r\n- ng-model\r\n- ng-init\r\n- ng-controller\r\n- ng-cloak --> class=\'ng-cloak\'\r\n- ng-class\r\n- ng-style\r\n- ng-repeat\r\n- ng-show,ng-hide\r\n- ng-if\r\n- ng-switch,ng-switch-when\r\n',
+23 silly publish   readmeFilename: 'README.me',
+23 silly publish   gitHead: '0f4b337efe71f91de0cc22b104d1512df3441694',
+23 silly publish   _id: 'angular-day02@1.0.1',
+23 silly publish   _shasum: '9962e79822ac66dab31cb4022711cfc8c1193443',
+23 silly publish   _from: '.' }
+24 info lifecycle angular-day02@1.0.1~prepublishOnly: angular-day02@1.0.1
+25 silly lifecycle angular-day02@1.0.1~prepublishOnly: no script for prepublishOnly, continuing
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name angular-day02
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'angular-day02',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'angular-day02',
+30 silly mapToRegistry   name: 'angular-day02',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri https://registry.npmjs.org/angular-day02
+32 verbose publish registryBase https://registry.npmjs.org/
+33 silly publish uploading C:\Users\Administrator\AppData\Roaming\npm-cache\angular-day02\1.0.1\package.tgz
+34 verbose request uri https://registry.npmjs.org/angular-day02
+35 verbose request sending authorization for write operation
+36 info attempt registry request try #1 at 21:52:04
+37 verbose request using bearer token for auth
+38 verbose request id f54e5f6f05f5d4b9
+39 http request PUT https://registry.npmjs.org/angular-day02
+40 http 403 https://registry.npmjs.org/angular-day02
+41 verbose headers { 'content-type': 'application/json',
+41 verbose headers   'cache-control': 'max-age=300',
+41 verbose headers   'content-length': '95',
+41 verbose headers   'accept-ranges': 'bytes',
+41 verbose headers   date: 'Sun, 29 Jan 2017 13:52:08 GMT',
+41 verbose headers   via: '1.1 varnish',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'x-served-by': 'cache-nrt6130-NRT',
+41 verbose headers   'x-cache': 'MISS',
+41 verbose headers   'x-cache-hits': '0',
+41 verbose headers   'x-timer': 'S1485697927.374023,VS0,VE1126',
+41 verbose headers   vary: 'Accept-Encoding' }
+42 verbose request invalidating C:\Users\Administrator\AppData\Roaming\npm-cache\registry.npmjs.org\angular-day02 on PUT
+43 error publish Failed PUT 403
+44 verbose stack Error: "You cannot publish over the previously published version 1.0.1." : angular-day02
+44 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+44 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:290:14)
+44 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+44 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:186:22)
+44 verbose stack     at emitTwo (events.js:106:13)
+44 verbose stack     at Request.emit (events.js:191:7)
+44 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1081:10)
+44 verbose stack     at emitOne (events.js:96:13)
+44 verbose stack     at Request.emit (events.js:188:7)
+44 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1001:12)
+45 verbose statusCode 403
+46 verbose pkgid angular-day02
+47 verbose cwd E:\我的坚果云\流行框架\day04\code
+48 error Windows_NT 6.1.7601
+49 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "."
+50 error node v7.4.0
+51 error npm  v4.0.5
+52 error code E403
+53 error "You cannot publish over the previously published version 1.0.1." : angular-day02
+54 error If you need help, you may report this error at:
+54 error     <https://github.com/npm/npm/issues>
+55 verbose exit [ 1, true ]
