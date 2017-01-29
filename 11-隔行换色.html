@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隔行换色</title>
+    <style>
+        body,ul{
+            margin:0;
+            padding:0;
+        }
+        .myli{
+            box-sizing: border-box;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .myli li{
+            list-style: none;
+            margin-top: 1px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 4px;
+            padding-left: 20px;
+            color: #fff;
+            
+        }
+        .red{
+            background: #F56464;
+        }
+        .blue{
+            background: #3493F0;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="demoController">
+        <ul class="myli">
+        <!--  $even:提供了一个布尔值，当为true时表示当前元素是第偶数条数据，是从索引0开始 -->
+        <!-- $odd:提供了一个布尔值，当为true时表示当前元素是第奇数条数据 -->
+            <li ng-repeat="item in data" class="{{ $odd?'red':'blue' }}">
+                {{item.name}},{{item.age}}
+            </li>
+        </ul>
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+         // 1.创建模块
+         var app = angular.module('myApp',[]);
+
+         // 2.创建控制器
+         app.controller('demoController',['$scope',function($scope){
+             $scope.data=[
+                {name:'小明',age:23},
+                {name:'小月',age:20},
+                {name:'小白',age:21},
+                {name:'小黑',age:22},
+                {name:'小红',age:18},
+             ];
+         }])
+     </script>
+</body>
+</html>

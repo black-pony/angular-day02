@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04.安全的创建控制器的方式.html</title>
+</head>
+<!-- 2.加上ng-app指令 -->
+<body ng-app="myApp">
+    <div ng-controller="demoController">
+        {{name}}
+    </div>
+    <!-- 1.引入angular.js文件 -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+        // 3.创建模块
+        var app = angular.module('myApp',[]);
+
+        // 4.创建控制器
+        // app.controller('demoController',function($log,$scope){
+        //     // 这种方式，angular是通过参数名来判断我们要使用的参数是什么
+        //     $scope.name='小明';
+        //     //console.log
+        //     //$log.log('af')
+        //     $log.log(111);
+        // });
+        app.controller('demoController',['$log','$scope',function($log,$scope){
+            // 这种方式，angular是通过参数名来判断我们要使用的参数是什么
+            $scope.name='小明';
+            //console.log
+            //$log.log('af')
+            $log.log(111);
+        }]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jqLite - 一个类似于jQuery的东西</title>
+</head>
+<body>
+    <div id="test"></div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+
+        var $ = angular.element;
+        $(document).ready(function(){
+            // 传入原生的js dom对象
+            var test = $(document.getElementById('test'))
+            test.addClass('red');
+            console.log(test);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <input type="text" id="btn" value="=" ng-keypress="fn($event)">
+    <script src="./node_modules/angular/angular.js"></script>
+    <script>
+        // document.querySelector('#btn').addEventListener('click',function(event){
+        //     console.log(event);//srcElement
+        // })
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('myController',['$scope',function($scope){
+            $scope.fn = function(event){
+                console.log(event);
+                if(event.code==='Enter'){
+
+                }
+            };
+        }]);
+    </script>
+</body>
+</html>

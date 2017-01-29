@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-repeat</title>
+    <style lang="">
+    </style>
+</head>
+<body ng-app="myApp">
+        <div ng-controller="demoController">
+
+            <table>
+                <tbody>
+                    <tr ng-repeat="i in [1,2,3,4,5]">
+                        <td>{{i}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <ul>
+                <li ng-repeat="(key,item) in data">{{key}} --- {{item.name}} -- {{item.age}}</li>
+            </ul>
+
+
+            <ul>
+                <li ng-repeat="item in data">{{$index}} --- {{item.name}} -- {{item.age}}</li>
+            </ul>
+
+            <ul>
+            <!-- ng-repeat:语法类似于forin循环
+                循环输出所在标签 -->
+                <li ng-repeat="item in data ">
+                    {{item.name}},{{item.age}}
+                </li>
+            </ul>
+
+            <div>
+                <div ng-repeat="item in data" >
+                    {{item.name}},{{item.age}}
+                </div>
+            </div>
+            <ul>
+                <li ng-repeat="item in testData">
+                    {{item}}
+                </li>
+            </ul>
+            <h1>渲染key,value数据</h1>
+            <ul>
+                <li ng-repeat="(key,item) in data">
+                    {{item.name}},{{item.age}}
+                </li>
+            </ul>
+        </div>
+     <script src="node_modules/angular/angular.js"></script>
+     <script>
+         // 1.创建模块
+         var app = angular.module('myApp',[]);
+
+         // 2.创建控制器
+         app.controller('demoController',['$scope',function($scope){
+             $scope.data=[
+                {name:'小明',age:23},
+                {name:'小月',age:20},
+                {name:'小白',age:21},
+                {name:'小黑',age:22},
+                {name:'小红',age:18},
+             ];
+             $scope.testData=[1,2,3,4,5,1];
+             $scope.obj={
+                xm:{name:'小明',age:23},
+                xy:{name:'小月',age:20},
+                xb:{name:'小白',age:23},
+                xh:{name:'小黑',age:23},
+                }
+         }])
+     </script>
+</body>
+</html>

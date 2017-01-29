@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-class - 两种方式</title>
+    <style>
+        body,ul{
+            margin:0;
+            padding:0;
+        }
+        .myli{
+            box-sizing: border-box;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .myli li{
+            list-style: none;
+            margin-top: 1px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 4px;
+            padding-left: 20px;
+            color: #fff;
+
+        }
+        .red{
+            background: #F56464;
+        }
+        .blue{
+            background: #3493F0;
+        }
+        .green{
+            background: #25D67B;
+        }
+        .fontColor{
+            color: #000 !important;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="demoController">
+        <h1>从多种样式中选择一个</h1>
+            <ul class="myli">
+            <!-- ng-class:类似从key,value对象获取其中一个属性的值 -->
+                <li ng-class="{'A':'red','B':'blue','C':'green'}[item.salary]"
+                     ng-repeat="item in data">
+                    {{item.name}},{{item.age}},{{item.salary}}
+                </li>
+            </ul>
+            <h1>从多种样式中选择多个</h1>
+            <ul class="myli">
+            <!-- ng-class 也是给一个key,value对象，它的属性名是我们提供的样式名，属性值只需要一个布尔值，为true,相应的属性名就会被添加到class中 -->
+                <li ng-class="{'red':false,'fontColor':true,'green':true}"
+                     ng-repeat="item in data">
+                    {{item.name}}，{{item.age}},{{item.salary}}
+                </li>
+            </ul>
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+        // 1.创建模块
+        var app = angular.module('myApp',[]);
+        // 2.创建控制器
+        app.controller('demoController',['$scope',function($scope){
+            $scope.data=[
+                {name:'小明',age:23,salary:'A'},// >=20k
+                {name:'小月',age:20,salary:'B'},// >=15k
+                {name:'小白',age:21,salary:'C'},// >= 12k
+                {name:'小黑',age:22,salary:'A'},
+                {name:'小红',age:18,salary:'C'},
+             ];
+        }])
+    </script>
+</body>
+</html>

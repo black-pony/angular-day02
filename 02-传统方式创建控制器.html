@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传统方式创建控制器</title>
+</head>
+    <!-- 2.东西ng-app指令 -->
+<body ng-app>
+        <div ng-controller="myController">
+           {{name}}
+        </div>
+    <!-- 1.引入angular.js文件-->
+    <script src="angular_1.2.29.js"></script>
+    <script>
+        // 注意：这种angular写法只适用于1.2.x版本
+        function myController($scope){
+            $scope.name = '小明';
+        }
+
+
+
+
+
+
+
+
+
+
+
+        // 通过全局函数来创建控制器
+        // angular会把我们创建的全局函数作为控制器使用
+        // function demoController($scope){
+        //     $scope.name='小明';
+        // }
+    </script>
+</body>
+</html>

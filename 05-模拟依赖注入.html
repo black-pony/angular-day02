@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟依赖注入</title>
+</head>
+<body>
+<script>
+    function test(callback){
+        var name="小明";
+        //console.log(callback.toString());
+        var func=callback.toString();
+
+        var arr = func.split(/\(|\)/);
+        var arg = arr[1];
+        console.log(arg);
+
+        callback(name);
+
+    }
+
+
+    //调用一下
+    test(function(name){
+        console.log(name);
+    })
+
+
+
+//如果上面的不懂，可以看下面的代码
+
+    
+    var angular = {
+        '$scope':'我想使用$scope',
+        '$log':'我想使用$log',
+        'abc':function(){
+
+        },
+        'bcd':function(){
+            
+        }
+    };
+
+    function myController($scope){
+        // console.log(myController.toString());
+        var arg = myController.toString().split('(')[1].split(')')[0];
+        // console.log(arg);
+        console.log(angular[arg]);
+    }
+</script>
+</body>
+</html>

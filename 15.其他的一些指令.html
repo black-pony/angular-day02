@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他指令</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="demoController">
+        <input type="checkbox" ng-checked="isSelected">
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+        // 1.创建模块
+        var app = angular.module('myApp',[]);
+        
+        // 2.创建控制器
+        app.controller('demoController',['$scope',function($scope){
+            $scope.isSelected=true;
+        }]);
+    </script>
+</body>
+</html>

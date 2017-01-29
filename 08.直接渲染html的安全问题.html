@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>直接渲染html的安全问题</title>
+    <script>
+        document.write('<script>document.cookie<\/script>')
+    </script>
+</head>
+<body ng-app="myApp">
+    
+
+    <div ng-controller="demoController">
+        {{name}}
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+        //1 .创建模块 
+    var app = angular.module('myApp',[]);
+    // 2.创建控制器
+    app.controller('demoController',['$scope',function($scope){
+        $scope.name='<div>123</div>'
+    }]);
+    </script>
+</body>
+</html>

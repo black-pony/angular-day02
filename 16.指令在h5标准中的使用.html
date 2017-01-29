@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body data-ng-app="myApp">
+<div data-ng-controller="demoController">
+    <input type="text" data-ng-model="name">
+</div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('demoController',['$scope',function($scope){
+            $scope.name="小明";
+        }]);
+    </script>
+</body>
+</html>

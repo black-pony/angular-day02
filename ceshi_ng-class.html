@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app="myApp" ng-controller="myController" ng-init="myStyle='width:100px;height:200px;background-color:red'">
+    <div ng-class="{'A':'red','B':'green','C':'yellow'}[myClass]"></div><!--在很多类名里面选择一个-->
+    <div ng-class="{'red':isRed,'green':isGreen,'yellow':isYellow}"></div><!--在很多类名里面选择多个-->
+    <div style="{{myStyle}}"></div>
+    <div ng-style="myStyle1"></div>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script>
+        var myApp = angular.module('myApp',[]);
+        myApp.controller('myController',function($scope){
+            $scope.myStyle1 = {
+                width:'100px',
+                height:'100px',
+                backgroundColor:'red'
+            };
+            $scope.myClass = 'A';
+            $scope.isRed = true;
+            $scope.isGreen = true;
+            $scope.isYellow = false;
+            $scope.data=[
+                {name:'小明',age:23,salary:'A'},// >=20k
+                {name:'小月',age:20,salary:'B'},// >=15k
+                {name:'小白',age:21,salary:'C'},// >= 12k
+                {name:'小黑',age:22,salary:'A'},
+                {name:'小红',age:18,salary:'C'},
+             ];
+        });
+    </script>
+</body>
+</html>

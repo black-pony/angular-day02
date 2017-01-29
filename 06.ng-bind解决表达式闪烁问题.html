@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-bind</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="demoController">
+        <!-- {{name}} -->
+        <p ng-bind="name"></p>
+        {{1 + 2}}
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+        // 1.创建模块
+        var app = angular.module('myApp',[]);
+
+        // 2.创建控制
+        app.controller('demoController',['$scope',function($scope){
+            $scope.name="小明";
+        }])
+    </script>
+</body>
+</html>

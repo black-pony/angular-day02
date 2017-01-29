@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-面向对象的方式创建控制器.html</title>
+</head>
+<!-- 2.加上ng-app指令 -->
+<body ng-app="myApp">
+    <div ng-controller="demoController as obj ">
+        {{obj.age}}
+        {{obj.name}}
+    </div>
+    <!-- 1.引入angular.js文件 -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+        /*
+        如何理解：
+        1、demoController用来与下面的app.controller一一对应
+        2、DemoController代表的是将来要创建出来的对象的构造器
+        3、obj代表的是将来创建出来的对象
+        4、age,name都挂载在obj对象身上，区别于传统方式来创建控制器
+
+
+        
+        */
+        // 3.创建模块
+        var app =angular.module('myApp',[]);
+
+        // 4.创建控制器
+        //把name,age挂载到我们的view model $scope身上
+        app.controller('demoController',function($scope){
+            // 可以当作构造函数来使用
+            $scope.name="小明";
+            $scope.age=12;
+        })
+
+        function DemoControllerFn(){
+            this.name = '小明';
+            this.age = 12;
+        }
+
+        //把name,age这些属性挂载到我们的控制器实例身上了
+        app.controller('demoController',DemoControllerFn);
+    </script>
+</body>
+</html>

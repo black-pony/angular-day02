@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-cloak</title>
+    <style>
+        .ng-cloak{
+            display: none;
+        }
+        .my-cloak{
+            display: none;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="demoController">
+        <!-- ng-cloak是写在元素类样式名的位置 -->
+        <p class="ng-cloak">{{name}}</p>
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+        // 1.创建模块
+        var app =angular.module('myApp',[]);
+
+        // 2.创建控制器
+        app.controller('demoController',function($scope){
+            $scope.name='小是';
+        })
+    </script>
+</body>
+</html>

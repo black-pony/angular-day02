@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-switch</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="demoController">
+        <div ng-switch="name">
+            <div ng-switch-when="小明">我是小明</div>
+            <div ng-switch-when="小红">我是小红</div>
+            <div ng-switch-when="小月">我是小月</div>
+        </div>
+
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+        // 1.创建模块
+        var app = angular.module('myApp',[]);
+        // 2.创建控制器
+        app.controller('demoController',['$scope',function($scope){
+            $scope.name="小明";
+        }])
+    </script>
+</body>
+</html>
